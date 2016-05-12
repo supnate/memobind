@@ -2,4 +2,18 @@
   "name": "memobind",
   "version": "0.1.0",
   "description": "Memoized function bind. It's created for the requirement of dynamic binding in React component rendering.",
+  "main": "index.js",
+  "author": "Nate Wang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/supnate/memobind.git"
+  },
+  "keywords": [
+    "react",
+    "function",
+    "bind",
+    "memoize",
+    "memobind"
+  ],
 }
