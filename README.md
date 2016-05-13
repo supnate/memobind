@@ -24,7 +24,7 @@ memobind(context, methodName, ...args);
 A `bind` call or [arrow function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) in a JSX prop will create a brand new function on every single render. This is bad for performance, as it will result in the garbage collector being invoked way more than is necessary.
 
 A common use case of `bind` in `render` is when rendering a list, to have a separate callback per list item:
-```
+```jsx
 <ul>
   {this.props.items.map(item =>
     <li key={item.id} onClick={this.onItemClick.bind(this, item.id)}>
@@ -36,7 +36,7 @@ A common use case of `bind` in `render` is when rendering a list, to have a sepa
 This is not good because it creates new functions in every update. The eslint rule [jsx-no-bind](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-no-bind.md) is used to detect such quality issues.
 
 To resolve the problem, `memobind` caches the function bind result so that it could be reused if the arguments are not changed. See below example:
-```
+```jsx
 <ul>
   {this.props.items.map(item =>
     <li key={item.id} onClick={memobind(this, 'onItemClick', item.id)}>
@@ -50,7 +50,7 @@ To resolve the problem, `memobind` caches the function bind result so that it co
 `memobind` caches the function bind result in the `context` object, with `methodName` as the key for cache object, and `this[methodName]` is the function to bind. So the context object should not be null, it's usually the component itself. The key for function binding result is stored with the key generated from arguments using JSON.stringify. In the above example, it is `JSON.stringify([item.id])`.
 
 If you need to call a method on the component props or other objects, wrap it as a component method. For example:
-```js
+```jsx
 class List extends React.Component {
   onItemClick(itemId) {
     this.props.onItemClick(itemId);
