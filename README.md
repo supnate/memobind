@@ -62,7 +62,7 @@ class List extends React.Component {
 }
 ```
 
-`memobind` is created only for the need of `bind` with arguments. If there is no arguments, [autobind decorator](http://technologyadvice.github.io/es7-decorators-babel6/) is a better choice with ES-future transpilers support such as [Babel](http://babeljs.io/).
+`memobind` is created only for the need of `bind` with arguments. If there is no arguments, although memobind could be used, [autobind decorator](http://technologyadvice.github.io/es7-decorators-babel6/) is a better choice with ES-future transpilers support such as [Babel](http://babeljs.io/).
 
 ### Examples
 

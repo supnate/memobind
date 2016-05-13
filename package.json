@@ -1,6 +1,6 @@
 {
   "name": "memobind",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A simple javascript utility for function binding memoization. ",
   "main": "index.js",
   "author": "Nate Wang",
