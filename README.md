@@ -47,7 +47,7 @@ To resolve the problem, `memobind` caches the function bind result so that it co
 ```
 
 ### How it works
-`memobind` caches the function bind result in the `context` object, with `methodName` as the key for cache object, and `this[methodName]` is the function to bind. So the context object should not be null, it's usually the component itself. The key for function binding result is stored with the key generated from arguments using JSON.stringify. In the above example, it is `JSON.stringify([item.id])`.
+`memobind` caches the function bind result in the `context` object, with `methodName` as the key for cache object, and `this[methodName]` is the function to bind. So the context object should not be null, it's usually the component itself. The function binding result is stored with the key generated from arguments using JSON.stringify. In the above example, it is `JSON.stringify([item.id])`.
 
 If you need to call a method on the component props or other objects, wrap it as a component method. For example:
 ```jsx
