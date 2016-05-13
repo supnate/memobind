@@ -8,4 +8,4 @@ var obj = {
 };
 
 var hello = memobind(obj, 'hello', 'good');
-hello('Nate');
+hello('Nate'); // => Hello Nate , good morning

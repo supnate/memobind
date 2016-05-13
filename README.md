@@ -47,7 +47,7 @@ To resolve the problem, `memobind` caches the function bind result so that it co
 ```
 
 ### How it works
-`memobind` caches the function bind result in the `context` object, with `methodName` as the key, so `this[methodName]` is the function to bind. So the context object should not be null, it's usually the component itself. If you need to call a method on the component props or other objects, wrap it as a component method. For example:
+`memobind` caches the function bind result in the `context` object, with `methodName` as the key, and `this[methodName]` is the function to bind. So the context object should not be null, it's usually the component itself. If you need to call a method on the component props or other objects, wrap it as a component method. For example:
 ```js
 class List extends React.Component {
   onItemClick(itemId) {
