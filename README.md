@@ -68,7 +68,7 @@ class List extends React.Component {
 
 Simple setState call
 ```jsx
-<button onClick={funcBind(this, 'setState', { popupVisible: true })}>Show Dialog</button>
+<button onClick={memobind(this, 'setState', { popupVisible: true })}>Show Dialog</button>
 ```
 
 ### License
