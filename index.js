@@ -3,7 +3,7 @@ function memobind(_this, funcName) {
   if (!_this[cacheKey]) _this[cacheKey] = {};
   var cache = _this[cacheKey];
   var args = Array.prototype.slice.call(arguments, 2);
-  var memoKey = '_' + args.join('_');
+  var memoKey = JSON.stringify(args);
   args.unshift(_this);
   if (!cache[memoKey]) {
     cache[memoKey] = Function.prototype.bind.apply(_this[funcName], args);

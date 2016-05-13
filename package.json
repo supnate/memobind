@@ -1,7 +1,7 @@
 {
   "name": "memobind",
-  "version": "0.1.0",
-  "description": "Memoized function bind. It's created for the requirement of dynamic binding in React component rendering.",
+  "version": "0.2.0",
+  "description": "A simple javascript utility for function binding memoization. ",
   "main": "index.js",
   "author": "Nate Wang",
   "license": "MIT",
@@ -15,5 +15,5 @@
     "bind",
     "memoize",
     "memobind"
-  ],
+  ]
 }

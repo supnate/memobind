@@ -7,5 +7,5 @@ var obj = {
   }
 };
 
-var hello = memobind(obj, 'hello', 'Good');
+var hello = memobind(obj, 'hello', 'good');
 hello('Nate');
