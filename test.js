@@ -1,11 +1,11 @@
 var memobind = require('./index.js');
 
-var obj = {
-  time: 'morning',
-  hello: function(greeting, name) {
-    console.log('Hello', name, ',', greeting, this.time);
+var iceCreamFactory = {
+  cooker: 'Nate',
+  make: function(customer, color, size) {
+    console.log(`Hi ${customer}, here is your ${color} and ${size} ice cream made by ${this.cooker}.`);
   }
 };
 
-var hello = memobind(obj, 'hello', 'good');
-hello('Nate'); // => Hello Nate , good morning
+var makeIceCream = memobind(iceCreamFactory, 'make', 'Kevin');
+makeIceCream('pink', 'big'); // => Hi Kevin, here is your pink and big ice cream made by Nate.
