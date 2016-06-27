@@ -1,5 +1,15 @@
 function memobind(_this, funcName) {
-  var func = _this[funcName];
+  var func;
+
+  if (!_this) {
+    throw new Error('!_this === true');
+  }
+
+  if (!_this[funcName]) {
+    throw new Error('Cannot find \'' + funcName + '\'.');
+  }
+
+  func = _this[funcName];
   if (!func._memobind_cache) func._memobind_cache = {};
   var cache = func._memobind_cache;
   var args = Array.prototype.slice.call(arguments, 2);
