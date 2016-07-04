@@ -2,6 +2,7 @@ Memobind
 ===========
 
 [![Version](http://img.shields.io/npm/v/memobind.svg)](https://www.npmjs.org/package/memobind)
+[![Build Status](https://travis-ci.org/supnate/memobind.svg?branch=master)](https://travis-ci.org/supnate/memobind)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 
 A simple javascript utility for function binding memoization. It's motivated by the requirement of dynamic binding in [React](https://facebook.github.io/react/) component rendering.
