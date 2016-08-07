@@ -1,17 +1,19 @@
 function memobind(thisArg, funcName) {
-  var func;
-
   if (typeof thisArg !== 'object' || !thisArg) {
     throw new TypeError('Invalid thisArg parameter.');
   }
 
-  if (typeof thisArg[funcName] !== 'function') {
+  var func = thisArg[funcName];
+  if (typeof func !== 'function') {
     throw new TypeError('\'' + funcName + '\' is not a function.');
   }
 
-  func = thisArg[funcName];
-  if (!func._memobind_cache) func._memobind_cache = {};
-  var cache = func._memobind_cache;
+  if (!thisArg._memobind_cache) thisArg._memobind_cache = {};
+  var cache = thisArg._memobind_cache[funcName];
+  if (!cache) {
+    cache = thisArg._memobind_cache[funcName] = {};
+  }
+
   var args = Array.prototype.slice.call(arguments, 2);
   var memoKey = JSON.stringify(args);
   if (!cache[memoKey]) {
