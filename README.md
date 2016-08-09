@@ -11,7 +11,7 @@ A simple javascript utility for function binding memoization. It's motivated by 
 Install with npm
 
 ```sh
-npm install memobind
+npm install memobind --save
 ```
 
 Use with node.js, browserify or webpack:
