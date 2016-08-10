@@ -8,7 +8,7 @@ Memobind
 A simple javascript utility for function binding memoization. It's motivated by the requirement of dynamic binding in [React](https://facebook.github.io/react/) component rendering.
 
 
-Install with npm
+Install with npm:
 
 ```sh
 npm install memobind --save
@@ -18,7 +18,7 @@ Use with node.js, browserify or webpack:
 
 ```js
 var memobind = require('memobind');
-memobind(context, methodName, ...args);
+var myMethod = memobind(context, methodName, ...args);
 ```
 
 ### Motivation
